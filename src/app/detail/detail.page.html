@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<ion-header>
+    <ion-toolbar class="header" color="green">
+        <!-- <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons> -->
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>ข้อมูลของคุณ {{ corn?.seller }}</ion-title>
+        <ion-buttons slot="end">
+            <ion-buttons slot="primary">
+                <ion-button (click)="toPdf(corn.seller)">
+                    <ion-icon slot="icon-only" name="print"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            <!-- <button (click)="toPdf()">Generate PDF</button> -->
+            <ion-button routerLink="/dashboard">
+                <ion-icon slot="icon-only" name="storefront"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content padding class="printable-area" id="dashboard">
+    <div class="ion-text-center ion-margin-top ion-margin-bottom">
+        <div class="orderSummary">
+            <h4>ข้อมูลของคุณ {{ corn?.seller }}</h4>
+            <p>ทำรายการเมื่อวันที่ : {{ corn?.date }}</p>
+            <p>โดยคุณ : {{ corn?.buyer }}</p>
+        </div>
+    </div>
+    <ion-card class="ion-no-padding">
+        <ion-row class="ion-align-items-center">
+            <ion-col size="12" class="ion-padding">
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ชื่อสกุลเกษตรกร</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.seller }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ที่อยู่อาศัย</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.address }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">เบอร์โทรศัพท์มือถือ</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.phone }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">น้ำหนักของข้าวโพด</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornWeight }} ตัน/tons
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ความชื้นของข้าวโพดที่วัดได้</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornHumidity }} %
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">สายพันธุ์ข้าวโพด</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornVariety }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">จำนวนเงินที่ได้รับ</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ this.earn }} บาท
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col>
+                <ion-button expand="block" [routerLink]="['/update', corn?.id]"> 
+                    แก้ไขข้อมูล 
+                </ion-button>
+                <ion-button color="danger" expand="block" (click)="deleteCorn(corn.id, corn.seller)"> 
+                    ลบข้อมูล
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content> -->
+
+
+<div class="printable-area" id="dashboard">
+    <!-- <div class="ion-text-center ion-margin-top ion-margin-bottom">
+        <div class="orderSummary">
+            <h4>ข้อมูลของคุณ {{ corn?.seller }}</h4>
+            <p>ทำรายการเมื่อวันที่ : {{ corn?.date }}</p>
+            <p>โดยคุณ : {{ corn?.buyer }}</p>
+        </div>
+    </div> -->
+    <ion-card class="ion-no-padding">
+        <div class="ion-text-center ion-margin-top ion-margin-bottom">
+            <div class="orderSummary">
+                <h4>ข้อมูลของคุณ {{ corn?.seller }}</h4>
+                <!-- <p>ทำรายการเมื่อวันที่ : {{ corn?.date }}</p>
+                <p>โดยคุณ : {{ corn?.buyer }}</p> -->
+            </div>
+        </div>
+        <!-- <ion-row class="ion-align-items-center">
+            <div size="12" class="ion-padding">
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ชื่อสกุลเกษตรกร</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.seller }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ที่อยู่อาศัย</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.address }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">เบอร์โทรศัพท์มือถือ</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.phone }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">น้ำหนักของข้าวโพด</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornWeight }} ตัน/tons
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ความชื้นของข้าวโพดที่วัดได้</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornHumidity }} %
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">สายพันธุ์ข้าวโพด</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornVariety }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">จำนวนเงินที่ได้รับ</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ this.earn }} บาท
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div class="sec-btn">
+                <ion-button expand="block" [routerLink]="['/update', corn?.id]"> 
+                    แก้ไขข้อมูล 
+                </ion-button>
+                <ion-button color="danger" expand="block" (click)="deleteCorn(corn.id, corn.seller)"> 
+                    ลบข้อมูล
+                </ion-button>
+            </div>
+        </ion-row> -->
+        <div class="ion-align-items-center">
+            <div size="12" class="ion-padding">
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ชื่อสกุลเกษตรกร</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.seller }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ที่อยู่อาศัย</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.address }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">เบอร์โทรศัพท์มือถือ</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.phone }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">น้ำหนักของข้าวโพด</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornWeight }} ตัน/tons
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">ความชื้นของข้าวโพดที่วัดได้</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornHumidity }} %
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">สายพันธุ์ข้าวโพด</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ corn?.cornVariety }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bold">
+                        <h5 class="ion-no-margin">จำนวนเงินที่ได้รับ</h5>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="address-text">
+                        {{ this.earn }} บาท
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div class="date-input">                    
+                    <p>ทำรายการเมื่อวันที่ : {{ corn?.date }}</p>
+                    <p>โดยคุณ : {{ corn?.buyer }}</p>
+            </div>
+            <div class="sec-btn">
+                <button class="btn-1" [routerLink]="['/update', corn?.id]"> 
+                    แก้ไขข้อมูล 
+                </button>
+                
+                <button class="btn-2" (click)="deleteCorn(corn.id, corn.seller)"> 
+                    ลบข้อมูล
+                </button>
+            </div>
+        </div>
+    </ion-card>
+</div>
+</html>

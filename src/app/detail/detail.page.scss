@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ion-header ion-toolbar{
+  background-color: #dae698;
+  padding-left: 10px;
+}
+
+.orderSummary {
+  margin: 2% 2%;
+}
+
+.orderSummary h4 {
+  font-weight: bold;
+  font-family: arial, sans-serif;
+}
+
+.ion-no-margin {
+  font-weight: bold;
+  font-family: arial;
+  font-size: 14px;
+}
+
+.address-text {
+  font-weight: bold;
+  font-family: arial;
+  font-size: 16px;
+  color: #000000;
+  margin-left: 5%;
+}
+
+.ion-padding {
+  margin-left: 10%;
+}
+
+#dashboard {
+//   background-color: aqua;
+    background-color: #f5f5f5;
+  height: 720px;
+}
+
+ion-card {
+    // background-color: #ffdab9;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 720px;
+}
+
+.ion-align-items-center {
+  height: 720px;
+}
+
+.ion-align-items-center .ion-padding {
+  width: 100%;
+  height: 480px;
+  padding: 10px;
+  padding-left: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ion-align-items-center .ion-padding ion-row {
+  margin: 15px;
+}
+
+.ion-align-items-center .sec-btn {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+}
+
+.ion-align-items-center .sec-btn button *{
+  font-size: 18px;
+}
+
+.ion-align-items-center .sec-btn button {
+  margin-top: 10px;
+  width: 60%;
+  margin: 30px;
+  // font-size: 18px;
+}
+
+.btn-1 {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #15ee00;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border-radius: 30px;
+  border: 2px solid #15ee00;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #15ee00;
+}
+
+.btn-1:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #15ee00;
+}
+
+.btn-1:active {
+  transform: scale(0.9);
+}
+
+.btn-2 {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #e40a16;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border-radius: 30px;
+    border: 2px solid #e40a16;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #e40a16;
+  }
+  
+  .btn-2:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #e40a16;
+  }
+  
+  .btn-2:active {
+    transform: scale(0.9);
+  }
+
+.date-input {
+    width: 100%;
+    text-align: end;
+    padding-right: 50px;
+    height: 50px;
+}

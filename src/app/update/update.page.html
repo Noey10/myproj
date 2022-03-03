@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar color="#dae698">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/dashboard">
+                <ion-icon slot="icon-only" name="storefront"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>แก้ไขข้อมูล</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row>
+            <ion-col text-center>
+                <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <ion-item>
+                        <ion-label position="floating">ชื่อเกษตรกร (Farmer name) </ion-label>
+                        <ion-input formControlName="seller" type="text" required> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">ที่อยู่ (Address)</ion-label>
+                        <ion-input formControlName="address" type="text" required> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">เบอร์โทรศัพท์มือถือ (Phone number)</ion-label>
+                        <ion-input formControlName="phone" type="text" required> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">น้ำหนักของข้าวโพด (Weight)</ion-label>
+                        <ion-input formControlName="cornWeight" type="text" required> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">ความชื้นของข้าวโพดที่วัดได้ (Humidity)</ion-label>
+                        <ion-input formControlName="cornHumidity" type="text" required> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">สายพันธุ์ข้าวโพด (Variety)</ion-label>
+                        <ion-input formControlName="cornVariety" type="text" required> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">ผู้กรอกข้อมูล (Filler)</ion-label>
+                        <ion-input formControlName="buyer" type="text" required> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">วันที่ที่ทำการกรอกข้อมูล (Date)</ion-label>
+                        <ion-input formControlName="date" type="text" required> </ion-input>
+                    </ion-item>
+                    <br>
+                    <div class="btn-dection">
+                        <ion-button [routerLink]="['/detail', id]" class="ion-margin-top" type="submit">
+                            บันทึกการแก้ไขข้อมูล</ion-button>
+                    </div>
+
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

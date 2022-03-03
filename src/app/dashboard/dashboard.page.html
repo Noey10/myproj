@@ -1,0 +1,210 @@
+<div class="section">
+    <ion-header>
+        <ion-toolbar color="red">
+            <ion-title>ข้อมูลเกษตรกรและข้าวโพดของเขา (Farmer and his corns)</ion-title>
+            <ion-buttons slot="end">
+                <ion-button routerLink="/dashboard">
+                    <ion-icon slot="icon-only" name="storefront"></ion-icon>
+                </ion-button>
+                <ion-button (click)="logout()">
+                    <ion-icon slot="icon-only" name="log-out"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <!-- <div class="nav">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>ข้อมูลเกษตรกรและข้าวโพดของเขา (Farmer and his corns)</ion-title>
+            <ion-buttons slot="end">
+                <ion-button routerLink="/dashboard">
+                    <ion-icon slot="icon-only" name="storefront"></ion-icon>
+                </ion-button>
+                <ion-button (click)="logout()">
+                    <ion-icon slot="icon-only" name="log-out"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+</div> -->
+
+    <div class="ion-padding">
+
+        <!-- <ion-row class="sub-title">
+            <ion-col>
+                <ion-item lines="none">
+                    <ion-label class="ion-labell">
+                        Today
+                        <p>{{today | date:'fullDate'}}</p>
+                    </ion-label>
+                    <ion-toolbar slot="end" class="subtoolbarsearch">
+                        <ion-searchbar placeholder="ค้นหารายชื่อเกษตรกร..." [(ngModel)]="search" animated></ion-searchbar>
+                    </ion-toolbar>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-toolbar  class="subtoolbarsearch">
+                    <ion-searchbar placeholder="ค้นหารายชื่อเกษตรกร..." [(ngModel)]="search" animated></ion-searchbar>
+                </ion-toolbar>
+            </ion-col>
+        </ion-row> -->
+        <!-- <ion-row>
+            <ion-col text-center>
+                <ion-item lines="none">
+                    <h4>ยินดีต้อนรับ กรุณากรอกข้อมูลด้วยความใส่ใจ ไม่งั้นจะได้ใส่เฝือก</h4>
+                </ion-item>
+            </ion-col>
+        </ion-row> -->
+        <!-- <ion-row>
+            <ion-col text-center>
+                <ion-item lines="none">
+                    ผู้กรอกข้อมูล&nbsp;<b>{{userEmail}}</b>
+                </ion-item>
+            </ion-col>
+        </ion-row><br><br> -->
+        <div class="main">
+            <div class="form-input">
+                <span class="ion-labell">
+                    Today :
+                    {{today | date:'fullDate'}}
+                </span>
+                <div class="obj-form" text-center>
+                    <div class="head-form">
+                        <span class="text-title-form">
+                            <h4>ยินดีต้อนรับ กรุณากรอกข้อมูลด้วยความใส่ใจ ไม่งั้นจะได้ใส่เฝือก</h4>
+                        </span>
+                        <span class="user">
+                            ผู้กรอกข้อมูล&nbsp;<b>{{userEmail}}</b>
+                        </span>
+                    </div>
+                    <!-- <span class="text-title-form">
+                        <h4>ยินดีต้อนรับ กรุณากรอกข้อมูลด้วยความใส่ใจ ไม่งั้นจะได้ใส่เฝือก</h4>
+                    </span>
+                    <span class="user">
+                        ผู้กรอกข้อมูล&nbsp;<b>{{userEmail}}</b>
+                    </span> -->
+                    <form [formGroup]="createCornForm" (submit)="createCorn()">
+                        <span>
+                            <ion-label position="floating" stacked>ระบุชื่อเกษตรกร (Farmer name) </ion-label>
+                            <ion-input formControlName="seller" type="text" placeholder="ระบุชื่อเกษตรกร..">
+                            </ion-input>
+                        </span>
+                        <span>
+                            <ion-label position="floating" stacked>ระบุที่อยู่ (Address)</ion-label>
+                            <ion-input formControlName="address" type="text" placeholder="ระบุที่อยู่อาศัย..">
+                            </ion-input>
+                        </span>
+                        <span>
+                            <ion-label position="floating" stacked>ระบุเบอร์โทรศัพท์มือถือ (Phone number)</ion-label>
+                            <ion-input formControlName="phone" type="text" placeholder="ระบุเบอร์โทรศัพท์มือถือ..">
+                            </ion-input>
+                        </span>
+                        <span>
+                            <ion-label position="floating" stacked>ระบุน้ำหนักของข้าวโพด (Weight)</ion-label>
+                            <ion-input formControlName="cornWeight" type="text" placeholder="ระบุน้ำหนักข้าวโพด(ตัน)..">
+                            </ion-input>
+                        </span>
+                        <span>
+                            <ion-label position="floating" stacked>ระบุความชื้นของข้าวโพดที่วัดได้ (Humidity)
+                            </ion-label>
+                            <ion-input formControlName="cornHumidity" type="text" placeholder="ระบุความชื้น ..">
+                            </ion-input>
+                        </span>
+                        <span>
+                            <ion-label position="floating" stacked>ระบุสายพันธุ์ข้าวโพด (Variety)</ion-label>
+                            <ion-input formControlName="cornVariety" type="text" placeholder="ระบุสายพันธุ์ข้าวโพด..">
+                            </ion-input>
+                        </span>
+                        <span>
+                            <ion-label position="floating" stacked>ระบุผู้กรอกข้อมูล (Filler)</ion-label>
+                            <ion-input formControlName="buyer" type="text" placeholder="ระบุชื่อของผู้กรอกข้อมูล..">
+                            </ion-input>
+                        </span>
+                        <span>
+                            <ion-label position="floating" stacked>ระบุวันที่ที่ทำการกรอกข้อมูล (Date)</ion-label>
+                            <ion-input formControlName="date" type="text" placeholder="ระบุวันที่กรอกข้อมูล..">
+                            </ion-input>
+                        </span>
+                        <br>
+                        <ion-button expand="block" type="submit" [disabled]="!createCornForm.valid">
+                            เพิ่มรายการ
+                        </ion-button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="show-input">
+                <div class="section-show">
+                    <span class="subtoolbarsearch">
+                        <ion-searchbar placeholder="ค้นหารายชื่อเกษตรกร..." [(ngModel)]="search" animated>
+                        </ion-searchbar>
+                    </span>
+                    <div class="obj-show-input">
+                        <span *ngFor="let corn of cornList | async | filter:search" routerLink="/detail/{{corn.id}}">
+                            <div class="data-obj">
+                                <h2>ชื่อเกษตรกร (Farmer) : {{corn.seller}}</h2>
+                                <p>พันธุ์ข้าวโพด (Corns Variety) : {{ corn.cornVariety }}</p>
+                                <p>น้ำหนักข้าวโพด (Corns Weight) : {{ corn.cornWeight }} ตัน/tons</p>
+                                <p>ชื่อผู้กรอกข้อมูล (Filler) : {{ corn.buyer }}</p>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <ion-row class="form-input">
+            <ion-col text-center>
+                <form [formGroup]="createCornForm" (submit)="createCorn()">
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุชื่อเกษตรกร (Farmer name) </ion-label>
+                        <ion-input formControlName="seller" type="text" placeholder="ระบุชื่อเกษตรกร.."> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุที่อยู่ (Address)</ion-label>
+                        <ion-input formControlName="address" type="text" placeholder="ระบุที่อยู่อาศัย.."> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุเบอร์โทรศัพท์มือถือ (Phone number)</ion-label>
+                        <ion-input formControlName="phone" type="text" placeholder="ระบุเบอร์โทรศัพท์มือถือ.."> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุน้ำหนักของข้าวโพด (Weight)</ion-label>
+                        <ion-input formControlName="cornWeight" type="text" placeholder="ระบุน้ำหนักข้าวโพด(ตัน).."> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุความชื้นของข้าวโพดที่วัดได้ (Humidity)</ion-label>
+                        <ion-input formControlName="cornHumidity" type="text" placeholder="ระบุความชื้น .."> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุสายพันธุ์ข้าวโพด (Variety)</ion-label>
+                        <ion-input formControlName="cornVariety" type="text" placeholder="ระบุสายพันธุ์ข้าวโพด.."> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุผู้กรอกข้อมูล (Filler)</ion-label>
+                        <ion-input formControlName="buyer" type="text" placeholder="ระบุชื่อของผู้กรอกข้อมูล.."> </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating" stacked>ระบุวันที่ที่ทำการกรอกข้อมูล (Date)</ion-label>
+                        <ion-input formControlName="date" type="text" placeholder="ระบุวันที่กรอกข้อมูล.."> </ion-input>
+                    </ion-item>
+                    <br>
+                    <ion-button expand="block" type="submit" [disabled]="!createCornForm.valid"> เพิ่มรายการ </ion-button>
+                </form>
+            </ion-col>
+        </ion-row><br><br>
+
+        <ion-row class="show-input">
+            <ion-col>
+                <ion-item *ngFor="let corn of cornList | async | filter:search" routerLink="/detail/{{corn.id}}">
+                    <ion-label>
+                        <h2>ชื่อเกษตรกร (Farmer) : {{corn.seller}}</h2>
+                        <p>พันธุ์ข้าวโพด (Corns Variety) : {{ corn.cornVariety }}</p>
+                        <p>น้ำหนักข้าวโพด (Corns Weight) : {{ corn.cornWeight }} ตัน/tons</p>
+                        <p>ชื่อผู้กรอกข้อมูล (Filler) : {{ corn.buyer }}</p>
+                    </ion-label>
+                </ion-item><br>
+            </ion-col>
+        </ion-row> -->
+    </div>
+
+</div>

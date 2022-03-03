@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+ion-header ion-toolbar{
+    background-color: #dae698;
+    padding-left: 10px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'form-input show-input';
+}
+
+.form-input {
+    grid-area: form-input;
+    border-right: 1px solid #000;
+    height: fit-content;
+    padding-top: 20px;
+}
+
+.form-input span.ion-labell {
+    margin: 20px;
+}
+
+.form-input .head-form {
+    margin-bottom: 15px;
+}
+
+.form-input .head-form h4{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.form-input .obj-form {
+    border: 2px solid #689f38;
+    margin: 20px;
+    padding: 20px;
+}
+
+.form-input .obj-form form {
+    padding-top: 15px;
+    border-top: 1px solid orange;
+}
+
+.form-input .obj-form form * {
+    font-size: 18px;
+}
+
+// .form-input .obj-form form ion-button {
+
+// }
+
+.form-input .obj-form form ion-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+   }
+   
+   .form-input .obj-form form ion-button:active {
+    transform: translateY(-3px);
+   }
+   
+   .form-input .obj-form form ion-button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s;
+   }
+   
+   .form-input .obj-form form ion-button:hover::after {
+    background-color: rgb(0, 238, 255);
+    transform: scaleX(1.4) scaleY(1.5);
+    opacity: 0;
+   }
+
+.form-input .obj-form form span ion-input {
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.form-input .obj-form form span ion-input:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #d8e4bc;
+}
+
+
+.show-input {
+    grid-area: show-input;
+    height: 720px;
+}
+
+.show-input .section-show {
+    margin: 20px;
+}
+
+.show-input .section-show .obj-show-input {
+    margin: 10px;
+    height: 860px;
+    overflow-y: auto;
+    // background-color: pink;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+.show-input .section-show .obj-show-input span {
+    margin: 20px;
+}
+
+.show-input .section-show .obj-show-input span .data-obj {
+    width: 540px;
+    background-color: #eee8aa;
+    padding: 25px;
+    margin-left: 25px;
+}
+
+.show-input .section-show .obj-show-input span .data-obj:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #daa520;
+    border-radius: 24px;
+    color: #fff;
+    cursor: pointer;
+}
